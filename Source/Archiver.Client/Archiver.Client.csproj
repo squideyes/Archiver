@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,6 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Config\ConfigStringCollection.cs" />
+    <Compile Include="Config\ConfigStringElement.cs" />
+    <Compile Include="Config\SettingsSection.cs" />
+    <Compile Include="Consts\WellKnown.cs" />
     <Compile Include="GUI\Abstracts\NotifyBase.cs" />
     <Compile Include="GUI\Commands\DelegateCommand.cs" />
     <Compile Include="GUI\EventArgs\NotifyArgs.cs" />
