@@ -12,10 +12,10 @@ namespace Archiver.Client.Consts
                 .GetSection("Settings") as SettingsSection;
 
             foreach (ConfigStringElement config in section.ConfigStrings)
-                ConfigStrings.Add(config.Name, config.ConnString);
+                Storages.Add(config.Name, config.ConnString);
         }
 
-        public static Dictionary<string, string> ConfigStrings { get; } = 
+        public static Dictionary<string, string> Storages { get; } = 
             new Dictionary<string, string>();
     }
 }

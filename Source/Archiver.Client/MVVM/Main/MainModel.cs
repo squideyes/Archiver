@@ -1,5 +1,7 @@
-﻿using System.ComponentModel;
+﻿using Archiver.Client.MVVM.Main;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
 namespace Archiver.Client
 {
@@ -13,7 +15,8 @@ namespace Archiver.Client
 
         [Category("Context")]
         [Required]
-        [Description("The storage account to upload the archived files to.")]
+        [Description("The Azure Storage Account to upload the archived files to.")]
+        [ItemsSource(typeof(ConnStringsItemsSource))]
         public string Storage
         {
             get

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Archiver.Client.Consts;
+using System.Linq;
+using System;
 
 namespace Archiver.Client
 {
@@ -9,6 +11,8 @@ namespace Archiver.Client
             var view = new MainWindow();
 
             var model = new MainModel();
+
+            model.Storage = WellKnown.Storages.FirstOrDefault().Key;
 
             var vm = new MainViewModel(model);
 

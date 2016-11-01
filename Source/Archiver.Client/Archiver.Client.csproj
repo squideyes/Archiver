@@ -102,6 +102,7 @@
     <Compile Include="Helpers\Extenders\OperatorExtenders.cs" />
     <Compile Include="Helpers\Extenders\StringExtenders.cs" />
     <Compile Include="Helpers\MiscClasses\AppInfo.cs" />
+    <Compile Include="MVVM\Main\ConnStringsItemsSource.cs" />
     <Compile Include="MVVM\Main\MainModel.cs" />
     <Compile Include="MVVM\Main\MainRunner.cs" />
     <Compile Include="MVVM\Main\MainViewModel.cs" />
