@@ -1,0 +1,82 @@
+﻿<Window x:Class="Archiver.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Archiver.Client"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Archiver"
+        Width="525"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width"
+                    Value="50" />
+            <Setter Property="Margin"
+                    Value="2,0" />
+            <Setter Property="Height"
+                    Value="22" />
+        </Style>
+
+    </Window.Resources>
+    <DockPanel Margin="8">
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button Content="Zip" />
+            <Button Content="Upload" />
+            <Button Content="Cancel" />
+            <Button Content="View" />
+            <Button Content="Help" />
+        </StackPanel>
+        <Border BorderThickness="1"
+                CornerRadius="4"
+                Padding="4"
+                BorderBrush="LightGray"
+                DockPanel.Dock="Bottom"
+                Margin="0,4,0,4">
+            <StackPanel>
+                <Label Margin="0,0,0,2"
+                       Padding="0"
+                       Content="Scanning Folder(s) for Files" />
+                <ProgressBar Height="12" />
+            </StackPanel>
+        </Border>
+        <TabControl Grid.IsSharedSizeScope="True"
+                    Height="300">
+            <TabItem Header="Settings">
+                <xctk:PropertyGrid AutoGenerateProperties="False"
+                                   SelectedObject="{Binding Model}"
+                                   ShowSearchBox="False"
+                                   ShowDescriptionByTooltip="True"
+                                   ShowSortOptions="False">
+                    <xctk:PropertyGrid.PropertyDefinitions>
+                        <xctk:PropertyDefinition TargetProperties="Storage"
+                                                 DisplayOrder="1" />
+                        <xctk:PropertyDefinition TargetProperties="BasePath"
+                                                 DisplayOrder="2" />
+                        <xctk:PropertyDefinition TargetProperties="Project"
+                                                 DisplayOrder="3" />
+                        <xctk:PropertyDefinition TargetProperties="Owner"
+                                                 DisplayOrder="4" />
+                        <xctk:PropertyDefinition TargetProperties="BizUnit"
+                                                 DisplayOrder="5" />
+                    </xctk:PropertyGrid.PropertyDefinitions>
+                </xctk:PropertyGrid>
+            </TabItem>
+            <TabItem Header="Log">
+                <DataGrid>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Date" />
+                        <DataGridTextColumn Header="Time" />
+                        <DataGridTextColumn Header="Level" />
+                        <DataGridTextColumn Header="Message" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+
+    </DockPanel>
+</Window>
