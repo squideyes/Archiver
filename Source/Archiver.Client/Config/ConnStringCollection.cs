@@ -2,13 +2,13 @@
 
 namespace Archiver.Client.Config
 {
-    public class ConfigStringCollection : ConfigurationElementCollection
+    public class ConnStringCollection : ConfigurationElementCollection
     {
-        public ConfigStringElement this[int index]
+        public ConnStringElement this[int index]
         {
             get
             {
-                return (ConfigStringElement)BaseGet(index);
+                return (ConnStringElement)BaseGet(index);
             }
             set
             {
@@ -19,18 +19,17 @@ namespace Archiver.Client.Config
             }
         }
 
-        public void Add(ConfigStringElement serviceConfig) => 
-            BaseAdd(serviceConfig);
+        public void Add(ConnStringElement element) => BaseAdd(element);
 
         public void Clear() => BaseClear();
 
         protected override ConfigurationElement CreateNewElement() =>
-            new ConfigStringElement();
+            new ConnStringElement();
 
         protected override object GetElementKey(ConfigurationElement element) =>
-            ((ConfigStringElement)element).Name;
+            ((ConnStringElement)element).Name;
 
-        public void Remove(ConfigStringElement element) =>
+        public void Remove(ConnStringElement element) =>
             BaseRemove(element.Name);
 
         public void RemoveAt(int index) => BaseRemoveAt(index);

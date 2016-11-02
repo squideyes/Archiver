@@ -52,8 +52,23 @@
                                    ShowSearchBox="False"
                                    ShowDescriptionByTooltip="True"
                                    ShowSortOptions="False">
+                    <xctk:PropertyGrid.EditorDefinitions>
+                        <xctk:EditorTemplateDefinition TargetProperties="BasePath">
+                            <xctk:EditorTemplateDefinition.EditingTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <Button DockPanel.Dock="Right"
+                                                Content="..."
+                                                Width="18"
+                                                Margin="0" />
+                                        <TextBox IsReadOnly="True" />
+                                    </DockPanel>
+                                </DataTemplate>
+                            </xctk:EditorTemplateDefinition.EditingTemplate>
+                        </xctk:EditorTemplateDefinition>
+                    </xctk:PropertyGrid.EditorDefinitions>
                     <xctk:PropertyGrid.PropertyDefinitions>
-                        <xctk:PropertyDefinition TargetProperties="Storage"
+                        <xctk:PropertyDefinition TargetProperties="Account"
                                                  DisplayOrder="1" />
                         <xctk:PropertyDefinition TargetProperties="BasePath"
                                                  DisplayOrder="2" />

@@ -2,13 +2,13 @@
 
 namespace Archiver.Client.Config
 {
-    public class ConfigStringElement : ConfigurationElement
+    public class ConnStringElement : ConfigurationElement
     {
-        public ConfigStringElement()
+        public ConnStringElement()
         {
         }
 
-        public ConfigStringElement(string name, string connString)
+        public ConnStringElement(string name, string connString)
         {
             Name = name;
             ConnString = connString;

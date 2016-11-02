@@ -10,17 +10,33 @@ namespace Archiver.Client
         {
             var view = new MainWindow();
 
-            var model = new MainModel();
+            var model = GetModel();
 
-            model.Storage = WellKnown.Storages.FirstOrDefault().Key;
+            var viewModel = new MainViewModel(model);
 
-            var vm = new MainViewModel(model);
-
-            view.DataContext = vm;
+            view.DataContext = viewModel;
 
             view.Closed += (s, e) => shutdown();
 
             view.Show();
+        }
+
+        private static MainModel GetModel()
+        {
+            var model = new MainModel();
+
+            var lastAccount = Properties.Settings.Default.LastAccount;
+
+            if (!string.IsNullOrWhiteSpace(lastAccount))
+            {
+                if (WellKnown.Accounts.ContainsKey(lastAccount))
+                    model.Account = lastAccount;
+            }
+
+            if (WellKnown.Accounts.Count > 0 && model.Account == null)
+                model.Account = WellKnown.Accounts.First().Key;
+
+            return model;
         }
     }
 }

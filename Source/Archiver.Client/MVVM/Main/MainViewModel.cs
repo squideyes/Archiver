@@ -16,7 +16,7 @@ namespace Archiver.Client
         {
             Model = model;
 
-            Storages = WellKnown.Storages.Select(cs => cs.Key).ToList();
+            Storages = WellKnown.Accounts.Select(cs => cs.Key).ToList();
         }
 
         public MainModel Model { get; }

@@ -16,8 +16,8 @@ namespace Archiver.Client
         [Category("Context")]
         [Required]
         [Description("The Azure Storage Account to upload the archived files to.")]
-        [ItemsSource(typeof(ConnStringsItemsSource))]
-        public string Storage
+        [ItemsSource(typeof(AccountItemsSource))]
+        public string Account
         {
             get
             {
@@ -27,7 +27,7 @@ namespace Archiver.Client
             {
                 storage = value;
 
-                NotifyPropertyChanged(m => m.Storage);
+                NotifyPropertyChanged(m => m.Account);
             }
         }
 

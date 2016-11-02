@@ -22,5 +22,17 @@ namespace Archiver.Client.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastAccount {
+            get {
+                return ((string)(this["LastAccount"]));
+            }
+            set {
+                this["LastAccount"] = value;
+            }
+        }
     }
 }

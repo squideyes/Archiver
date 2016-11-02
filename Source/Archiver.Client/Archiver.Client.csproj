@@ -82,8 +82,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Config\ConfigStringCollection.cs" />
-    <Compile Include="Config\ConfigStringElement.cs" />
+    <Compile Include="Config\ConnStringCollection.cs" />
+    <Compile Include="Config\ConnStringElement.cs" />
     <Compile Include="Config\SettingsSection.cs" />
     <Compile Include="Consts\WellKnown.cs" />
     <Compile Include="GUI\Abstracts\NotifyBase.cs" />
@@ -102,7 +102,7 @@
     <Compile Include="Helpers\Extenders\OperatorExtenders.cs" />
     <Compile Include="Helpers\Extenders\StringExtenders.cs" />
     <Compile Include="Helpers\MiscClasses\AppInfo.cs" />
-    <Compile Include="MVVM\Main\ConnStringsItemsSource.cs" />
+    <Compile Include="MVVM\Main\AccountItemsSource.cs" />
     <Compile Include="MVVM\Main\MainModel.cs" />
     <Compile Include="MVVM\Main\MainRunner.cs" />
     <Compile Include="MVVM\Main\MainViewModel.cs" />
