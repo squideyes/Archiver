@@ -1,7 +1,10 @@
-﻿using Archiver.Client.MVVM.Main;
+﻿using Archiver.Client.Controls;
+using Archiver.Client.MVVM.Main;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
+using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 
 namespace Archiver.Client
 {
@@ -49,7 +52,7 @@ namespace Archiver.Client
             }
         }
 
-        [Category("Meta-Data")]
+        [Category("Metadata")]
         [Required]
         [Description("The name of the project you want to associate with the uploaded files.")]
         public string Project
@@ -66,7 +69,7 @@ namespace Archiver.Client
             }
         }
 
-        [Category("Meta-Data")]
+        [Category("Metadata")]
         [Required]
         [Description("The full-name of the owner of the project.")]
         public string Owner
@@ -83,7 +86,7 @@ namespace Archiver.Client
             }
         }
 
-        [Category("Meta-Data")]
+        [Category("Metadata")]
         [Required]
         [DisplayName("Biz-Unit")]
         [Description("The business unit associated with the project.")]
@@ -101,7 +104,13 @@ namespace Archiver.Client
             }
         }
 
-        //[Category("Meta-Data")]
+        [Category("Metadata")]
+        [Required]
+        [Editor(typeof(PrimitiveTypeCollectionEditor), typeof(PrimitiveTypeCollectionEditor))]
+        [Description("Enter zero or more \"tags\" to associate with the archive.")]
+        public List<string> Tags { get; set; } = new List<string>();
+
+        //[Category("Metadata")]
         //[Required]
         //public string Tags { get; set; }
 

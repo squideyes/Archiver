@@ -52,21 +52,6 @@
                                    ShowSearchBox="False"
                                    ShowDescriptionByTooltip="True"
                                    ShowSortOptions="False">
-                    <xctk:PropertyGrid.EditorDefinitions>
-                        <xctk:EditorTemplateDefinition TargetProperties="BasePath">
-                            <xctk:EditorTemplateDefinition.EditingTemplate>
-                                <DataTemplate>
-                                    <DockPanel>
-                                        <Button DockPanel.Dock="Right"
-                                                Content="..."
-                                                Width="18"
-                                                Margin="0" />
-                                        <TextBox IsReadOnly="True" />
-                                    </DockPanel>
-                                </DataTemplate>
-                            </xctk:EditorTemplateDefinition.EditingTemplate>
-                        </xctk:EditorTemplateDefinition>
-                    </xctk:PropertyGrid.EditorDefinitions>
                     <xctk:PropertyGrid.PropertyDefinitions>
                         <xctk:PropertyDefinition TargetProperties="Account"
                                                  DisplayOrder="1" />
@@ -76,10 +61,15 @@
                                                  DisplayOrder="3" />
                         <xctk:PropertyDefinition TargetProperties="Owner"
                                                  DisplayOrder="4" />
-                        <xctk:PropertyDefinition TargetProperties="BizUnit"
+                        <xctk:PropertyDefinition TargetProperties="Tags"
                                                  DisplayOrder="5" />
+                        <xctk:PropertyDefinition TargetProperties="BizUnit"
+                                                 DisplayOrder="6" />
                     </xctk:PropertyGrid.PropertyDefinitions>
                 </xctk:PropertyGrid>
+            </TabItem>
+            <TabItem Header="File(s)">
+                
             </TabItem>
             <TabItem Header="Log">
                 <DataGrid>
